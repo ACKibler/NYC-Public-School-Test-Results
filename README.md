@@ -26,7 +26,7 @@ schools["total_SAT"] = schools[["average_math", "average_reading", "average_writ
 top_10_schools = schools[["school_name", "total_SAT"]].sort_values(by="total_SAT", ascending=False).head(10)
 print(top_10_schools)
 
-# Locate the NYC borough with the largest standard deviation for "total_SAT", storing as a DataFrame called largest_std_dev with "borough" as the index and three columns: "num_schools" for the number of schools in the borough, "average_SAT" for the mean of "total_SAT", #and "std_SAT" for the standard deviation of "total_SAT". Round all numeric values to two decimal places.
+# Locate the NYC borough with the largest standard deviation for "total_SAT", storing as a DataFrame called largest_std_dev with "borough" as the index and three columns: "num_schools" for the number of schools in the borough, "average_SAT" for the mean of "total_SAT",#and "std_SAT" for the standard deviation of "total_SAT". Round all numeric values to two decimal places.
 
 borough_stats = schools.groupby('borough')["total_SAT"].agg(['count','mean','std']).round(2)
 borough_stats.columns = ['num_schools','average_SAT','std_SAT']
